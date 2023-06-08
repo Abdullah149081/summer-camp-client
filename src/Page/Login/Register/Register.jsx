@@ -63,7 +63,7 @@ const Register = () => {
                       type="password"
                       placeholder="Enter your password"
                       className="input input-bordered"
-                      {...register("password", { required: true, minLength: 6, pattern: /(?=.*[A-Z])(?=.*[!@#$&*])/ })}
+                      {...register("password", { required: true, minLength: 6, pattern: /(?=.*[A-Z])(?=.*[!@#$&*%])/ })}
                     />
                     {errors.password?.type === "required" && <span className="mt-1 text-sm text-error font-bold">Password is required</span>}
                     {errors.password?.type === "minLength" && <span className="mt-1 text-sm text-error font-bold">Password must be 6 character</span>}
