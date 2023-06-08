@@ -75,7 +75,7 @@ const Banner = () => {
                   <h2 className=" font-bold text-lg">20% Flat Off On Enroll</h2>
                 </div>
                 <div className=" mt-8">
-                  <button type="button" className="btn font-bold text-white border-0 bg-[#eb1551] ">
+                  <button type="button" className="btn-camp">
                     Enroll NOw
                   </button>
                 </div>
