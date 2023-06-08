@@ -36,7 +36,7 @@ const Header = () => {
             <ActiveLink to="/dashboard">Dashboard</ActiveLink>
           </li>
           <li>
-            <ActiveLink to="/sign-in">Sign In</ActiveLink>
+            <ActiveLink to="/login">Sign In</ActiveLink>
           </li>
         </Navbar.Collapse>
       </Navbar>
