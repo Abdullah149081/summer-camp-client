@@ -1,7 +1,9 @@
+/* eslint-disable import/no-absolute-path */
+/* eslint-disable import/no-unresolved */
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
 import logo from "/logo.png";
 
-function App() {
+const Header = () => {
   return (
     <div>
       <div>
@@ -31,6 +33,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
-export default App;
+export default Header;
