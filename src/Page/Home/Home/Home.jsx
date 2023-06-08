@@ -1,11 +1,12 @@
 import React from "react";
 import PageTitle from "../../../components/pageTitle/PageTitle";
+import Banner from "../Banner/Banner";
 
 const Home = () => {
   return (
     <div>
       <PageTitle title="Home" />
-      <h1>This is home</h1>
+      <Banner />
     </div>
   );
 };
