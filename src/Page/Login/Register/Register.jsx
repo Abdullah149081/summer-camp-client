@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../../../Hooks/useAuth";
 import PageTitle from "../../../components/pageTitle/PageTitle";
 
 const Register = () => {
   const [error, setError] = useState("");
+  const { updateUserProfile, createUser, logOut } = useAuth();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -17,7 +20,15 @@ const Register = () => {
       setError("Passwords do not match.");
       return;
     }
-    console.log(data);
+    createUser(data.email, data.password)
+      .then(() => {
+        updateUserProfile(data.name, data.photo);
+        logOut();
+        navigate("/login");
+      })
+      .catch((err) => {
+        setError(err?.message);
+      });
   };
   return (
     <div>
