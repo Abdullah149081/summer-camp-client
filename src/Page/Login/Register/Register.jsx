@@ -40,7 +40,7 @@ const Register = () => {
             <img className="border-2 rounded-lg shadow-2xl max-w-screen-xl absolute w-full h-[800px]" src="https://imacorp.com/wp-content/uploads/2019/06/login-page-bg.jpg" alt="" />
             <div className="hero-content w-full  flex-col lg:flex-row">
               <div className="card flex-shrink-0 w-full max-w-sm  ">
-                <h2 className="text-center text-3xl font-bold">Sign Up</h2>
+                <h2 className="text-center text-3xl font-bold text-white">Sign Up</h2>
                 <form onSubmit={handleSubmit(onSubmit)} className="px-4">
                   <div className="form-control">
                     <label className="label">

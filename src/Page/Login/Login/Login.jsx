@@ -5,6 +5,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import PageTitle from "../../../components/pageTitle/PageTitle";
+import Social from "../Social/Social";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -42,7 +43,7 @@ const Login = () => {
             <img className="border-2 rounded-lg shadow-2xl max-w-screen-xl absolute w-full h-[800px]" src="https://imacorp.com/wp-content/uploads/2019/06/login-page-bg.jpg" alt="" />
             <div className="hero-content w-full  flex-col lg:flex-row">
               <div className="card flex-shrink-0 w-full max-w-sm  ">
-                <h2 className="text-center text-3xl font-bold">Sign In</h2>
+                <h2 className="text-center text-3xl font-bold text-white">Sign In</h2>
                 <form onSubmit={handleSubmit(onSubmit)} className="px-4">
                   <div className="form-control">
                     <label className="label">
@@ -73,13 +74,13 @@ const Login = () => {
                     </button>
                   </div>
                 </form>
-                <p className="mt-2 text-center  font-bold">
+                <p className="mt-2 text-center   font-bold">
                   Don't have an account?
                   <Link className=" text-base font-semibold link-hover ml-2" to="/signUp">
                     Sign up
                   </Link>
                 </p>
-                {/* <p>Social</p> */}
+                <Social />
               </div>
             </div>
           </div>
