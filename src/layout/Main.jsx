@@ -3,6 +3,7 @@
 
 import { Outlet, ScrollRestoration, useLocation } from "react-router-dom";
 
+import Footer from "../Page/Shared/Footer/Footer";
 import Header from "../Page/Shared/NavBar/Header";
 
 const Main = () => {
@@ -13,6 +14,7 @@ const Main = () => {
         <Outlet />
         <ScrollRestoration />
       </div>
+      <Footer />
     </div>
   );
 };
