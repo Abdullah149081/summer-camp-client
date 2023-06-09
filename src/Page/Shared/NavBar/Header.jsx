@@ -3,6 +3,7 @@
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
 import { FiLogOut } from "react-icons/fi";
 import useAuth from "../../../Hooks/useAuth";
+import isUser from "../../../assets/user.gif";
 import ActiveLink from "./ActiveLink";
 import logo from "/logo.png";
 
@@ -19,23 +20,29 @@ const Header = () => {
           <img alt="Logo" width="64.88" height="32" className="lg:mr-3 " src={logo} />
           <span className="font-bubblegum  self-center whitespace-nowrap lg:text-xl font-semibold dark:text-white ">SportsRookieCamp</span>
         </Navbar.Brand>
+
         <div className="flex  md:order-2">
-          <Dropdown className="mr-6" inline label={<Avatar alt="User settings" img={user?.photoURL} rounded />}>
-            <Dropdown.Header>
-              <span className="block text-sm">{user?.displayName}</span>
-              <span className="block truncate text-sm font-medium">{user?.email}</span>
-            </Dropdown.Header>
-            <Dropdown.Item>
-              <button onClick={handleLogOut} type="button" className="  ">
-                <span className="inline-flex items-center gap-2 font-extrabold ">
-                  <FiLogOut className="w-4 h-4" />
-                  logout
-                </span>
-              </button>
-            </Dropdown.Item>
-          </Dropdown>
+          {user ? (
+            <Dropdown className="mr-6" inline label={<Avatar alt="User settings" img={user?.photoURL} rounded />}>
+              <Dropdown.Header>
+                <span className="block text-sm">{user?.displayName}</span>
+                <span className="block truncate text-sm font-medium">{user?.email}</span>
+              </Dropdown.Header>
+              <Dropdown.Item>
+                <button onClick={handleLogOut} type="button" className="text-left w-full ">
+                  <span className="inline-flex items-center gap-2 font-extrabold ">
+                    <FiLogOut className="w-4 h-4" />
+                    logout
+                  </span>
+                </button>
+              </Dropdown.Item>
+            </Dropdown>
+          ) : (
+            <img className="w-14 h-14 hidden lg:block" src={isUser} alt="" />
+          )}
           <Navbar.Toggle />
         </div>
+
         <Navbar.Collapse>
           <li>
             <ActiveLink to="/">Home</ActiveLink>
@@ -46,12 +53,16 @@ const Header = () => {
           <li>
             <ActiveLink to="/classes">Classes</ActiveLink>
           </li>
-          <li>
-            <ActiveLink to="/dashboard">Dashboard</ActiveLink>
-          </li>
-          <li>
-            <ActiveLink to="/login">Sign In</ActiveLink>
-          </li>
+          {user && (
+            <li>
+              <ActiveLink to="/dashboard">Dashboard</ActiveLink>
+            </li>
+          )}
+          {!user && (
+            <li>
+              <ActiveLink to="/login">Sign In</ActiveLink>
+            </li>
+          )}
         </Navbar.Collapse>
       </Navbar>
     </div>
