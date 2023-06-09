@@ -1,10 +1,17 @@
 /* eslint-disable import/no-absolute-path */
 /* eslint-disable import/no-unresolved */
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
+import { FiLogOut } from "react-icons/fi";
+import useAuth from "../../../Hooks/useAuth";
 import ActiveLink from "./ActiveLink";
 import logo from "/logo.png";
 
 const Header = () => {
+  const { user, logOut } = useAuth();
+  const handleLogOut = () => {
+    logOut();
+  };
+
   return (
     <div className="navbar-container">
       <Navbar fluid rounded>
@@ -13,12 +20,19 @@ const Header = () => {
           <span className="font-bubblegum  self-center whitespace-nowrap lg:text-xl font-semibold dark:text-white ">SportsRookieCamp</span>
         </Navbar.Brand>
         <div className="flex  md:order-2">
-          <Dropdown className="mr-6" inline label={<Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded />}>
+          <Dropdown className="mr-6" inline label={<Avatar alt="User settings" img={user?.photoURL} rounded />}>
             <Dropdown.Header>
-              <span className="block text-sm">Bonnie Green</span>
-              <span className="block truncate text-sm font-medium">name@flowbite.com</span>
+              <span className="block text-sm">{user?.displayName}</span>
+              <span className="block truncate text-sm font-medium">{user?.email}</span>
             </Dropdown.Header>
-            <Dropdown.Item>Sign out</Dropdown.Item>
+            <Dropdown.Item>
+              <button onClick={handleLogOut} type="button" className="  ">
+                <span className="inline-flex items-center gap-2 font-extrabold ">
+                  <FiLogOut className="w-4 h-4" />
+                  logout
+                </span>
+              </button>
+            </Dropdown.Item>
           </Dropdown>
           <Navbar.Toggle />
         </div>

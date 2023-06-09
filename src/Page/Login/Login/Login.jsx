@@ -2,12 +2,17 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import useAuth from "../../../Hooks/useAuth";
 import PageTitle from "../../../components/pageTitle/PageTitle";
 
 const Login = () => {
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const { signIn } = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
   const {
     register,
     handleSubmit,
@@ -15,6 +20,13 @@ const Login = () => {
   } = useForm();
   const onSubmit = (data) => {
     setError("");
+    signIn(data.email, data.password)
+      .then(() => {
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        setError(err?.message);
+      });
     console.log(data);
   };
   const handleShowPassword = () => {
