@@ -39,11 +39,7 @@ const Login = () => {
       <div>
         <div>
           <div className="hero min-h-screen ">
-            <img
-              className="border-2 rounded-lg shadow-2xl max-w-screen-xl absolute w-full h-[800px]"
-              src="https://png.pngtree.com/thumb_back/fh260/background/20210929/pngtree-abstract-background-glassmorphism-pastel-color-image_908574.png"
-              alt=""
-            />
+            <img className="border-2 rounded-lg shadow-2xl max-w-screen-xl absolute w-full h-[800px]" src="https://imacorp.com/wp-content/uploads/2019/06/login-page-bg.jpg" alt="" />
             <div className="hero-content w-full  flex-col lg:flex-row">
               <div className="card flex-shrink-0 w-full max-w-sm  ">
                 <h2 className="text-center text-3xl font-bold">Sign In</h2>
