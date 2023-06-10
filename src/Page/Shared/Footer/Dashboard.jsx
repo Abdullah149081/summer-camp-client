@@ -1,11 +1,10 @@
 /* eslint-disable import/no-absolute-path */
 /* eslint-disable import/no-unresolved */
-import { FaBars, FaBook, FaCalendarAlt, FaHome, FaShopify, FaShoppingCart, FaUsers, FaWallet } from "react-icons/fa";
+import { FaBook, FaCalendarAlt, FaHome, FaShoppingCart, FaUsers, FaWallet } from "react-icons/fa";
 import { ImSpoonKnife } from "react-icons/im";
 import { TfiMenuAlt } from "react-icons/tfi";
 import { NavLink, Outlet } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
-import logo from "/logo.png";
 
 const Dashboard = () => {
   const { user } = useAuth();
@@ -29,9 +28,14 @@ const Dashboard = () => {
 
         <ul className="menu  px-6 w-80 mt-4">
           <div className="mb-4 justify-center flex gap-4  items-center ">
-            <img className="w-16  " src={logo} alt="" />
+            <li>
+              <NavLink to="/">
+                <FaHome className="w-10 h-10  text-lime-600" />
+              </NavLink>
+            </li>
             <p className="py-0  font-bubblegum font-semibold tracking-widest text-lg uppercase">SportsRookieCamp</p>
           </div>
+
           <div className="mb-10 flex justify-center gap-8  items-center ">
             <img className="w-10 h-10 rounded-full ring-offset-2 ring-2 ring-secondary" src={user?.photoURL} alt="" />
             <div className="space-y-1">
@@ -39,6 +43,8 @@ const Dashboard = () => {
               <p className=" font-semibold tracking-widest  ">{user?.displayName}</p>
             </div>
           </div>
+
+          <hr className="w-full h-0.5 mx-auto my-4 bg-gray-100 border-0 rounded " />
           {isAdmin ? (
             <>
               <li>
@@ -95,22 +101,6 @@ const Dashboard = () => {
           )}
 
           {/* hr  */}
-          <hr className="w-full h-0.5 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10" />
-          <li>
-            <NavLink to="/">
-              <FaHome className="w-5 h-5" /> <span className="font-cinzel font-semibold">Home</span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/menu">
-              <FaBars className="w-5 h-5" /> <span className="font-cinzel font-semibold"> Our Menu</span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/shop/salad">
-              <FaShopify className="w-5 h-5" /> <span className="font-cinzel font-semibold">Order Food</span>
-            </NavLink>
-          </li>
         </ul>
       </div>
     </div>
