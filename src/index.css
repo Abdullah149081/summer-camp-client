@@ -34,14 +34,28 @@
   @apply text-center bg-white  py-2 px-2 rounded-full hover:bg-pink-600;
 }
 
-.camp-footer  {
+.camp-footer {
   font-size: 20px;
   font-weight: 600;
-  
+
   cursor: pointer;
 }
 .camp-footer :hover {
   font-weight: 600;
   color: yellow;
   cursor: pointer;
+}
+.drawer-side a.active {
+  padding: 10px 4px;
+  display: inline-grid;
+  font-size: 16px;
+  line-height: 0;
+  background-color: unset !important;
+}
+.drawer-side a {
+  padding: 10px 4px;
+  display: inline-grid;
+  font-size: 16px;
+  line-height: 0;
+  background-color: unset !important;
 }

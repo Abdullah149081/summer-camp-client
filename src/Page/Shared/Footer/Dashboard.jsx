@@ -1,10 +1,11 @@
 /* eslint-disable import/no-absolute-path */
 /* eslint-disable import/no-unresolved */
-import { FaBook, FaCalendarAlt, FaHome, FaShoppingCart, FaUsers, FaWallet } from "react-icons/fa";
+import { FaAngleRight, FaBook, FaCalendarAlt, FaHome, FaShoppingCart, FaUsers, FaWallet } from "react-icons/fa";
 import { ImSpoonKnife } from "react-icons/im";
 import { TfiMenuAlt } from "react-icons/tfi";
 import { NavLink, Outlet } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
+import PageTitle from "../../../components/pageTitle/PageTitle";
 
 const Dashboard = () => {
   const { user } = useAuth();
@@ -13,6 +14,7 @@ const Dashboard = () => {
 
   return (
     <div className="drawer lg:drawer-open ">
+      <PageTitle title="Dashboard" />
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content ">
         <div className="flex justify-center">
@@ -44,35 +46,36 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <hr className="w-full h-0.5 mx-auto my-4 bg-gray-100 border-0 rounded " />
+          <hr className="w-full h-0.5 mx-auto my-4  border-0 rounded " />
           {isAdmin ? (
-            <>
+            <div className="space-y-4">
               <li>
-                <NavLink to="/dashboard/home">
-                  <FaHome className="w-5 h-5" /> <span className="font-cinzel font-semibold">Admin Home</span>
+                <NavLink className="active:bg-transparent" to="/dashboard/myClass">
+                  <FaHome className="w-5 h-5" /> <span className="font-cinzel font-semibold">My Class</span>
+                  <FaAngleRight />
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/addItem">
-                  <ImSpoonKnife className="w-5 h-5" /> <span className="font-cinzel font-semibold">add items</span>
+                  <ImSpoonKnife className="w-5 h-5" /> <span className="font-cinzel font-semibold">add items</span> <FaAngleRight />
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/mangeItems">
-                  <TfiMenuAlt className="w-5 h-5" /> <span className="font-cinzel font-semibold">manage items</span>
+                  <TfiMenuAlt className="w-5 h-5" /> <span className="font-cinzel font-semibold">manage items</span> <FaAngleRight />
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/history">
-                  <FaBook className="w-5 h-5" /> <span className="font-cinzel font-semibold">Manage bookings</span>
+                  <FaBook className="w-5 h-5" /> <span className="font-cinzel font-semibold">Manage bookings</span> <FaAngleRight />
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/allUsers">
-                  <FaUsers className="w-5 h-5" /> <span className="font-cinzel font-semibold">all users</span>
+                  <FaUsers className="w-5 h-5" /> <span className="font-cinzel font-semibold">all users</span> <FaAngleRight />
                 </NavLink>
               </li>
-            </>
+            </div>
           ) : (
             <>
               <li>
