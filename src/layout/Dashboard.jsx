@@ -1,12 +1,12 @@
 /* eslint-disable comma-dangle */
 /* eslint-disable import/no-absolute-path */
 /* eslint-disable import/no-unresolved */
-import { FaAngleRight, FaCalendarAlt, FaDiagnoses, FaHome, FaShoppingCart, FaUserEdit, FaUsers, FaUsersCog, FaWallet } from "react-icons/fa";
 
+import { FaAngleRight, FaDiagnoses, FaHome, FaUserEdit, FaUserPlus, FaUsers, FaUsersCog, FaWallet } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
+import selected from "../assets/selected.png";
 
 import useAuth from "../Hooks/useAuth";
-import PageTitle from "../components/pageTitle/PageTitle";
 
 const Dashboard = () => {
   const { user } = useAuth();
@@ -87,12 +87,13 @@ const Dashboard = () => {
             <div className="space-y-4">
               <li>
                 <NavLink to="/dashboard/studentClasses">
-                  <FaHome className="w-5 h-5" /> <span className="font-cinzel font-semibold">My Selected Classes</span> <FaAngleRight />
+                  <img className="w-5 h-5" src={selected} alt="" />
+                  <span className="font-cinzel font-semibold">My Selected Classes</span> <FaAngleRight />
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/enrolledClass">
-                  <FaCalendarAlt className="w-5 h-5" /> <span className="font-cinzel font-semibold">My Enrolled Classes</span> <FaAngleRight />
+                  <FaUserPlus className="w-5 h-5" /> <span className="font-cinzel font-semibold">My Enrolled Classes</span> <FaAngleRight />
                 </NavLink>
               </li>
               <li>
