@@ -55,7 +55,7 @@ const Header = () => {
           </li>
           {user && (
             <li>
-              <ActiveLink to="/dashboard/myClass">Dashboard</ActiveLink>
+              <ActiveLink to="/dashboard/studentClasses">Dashboard</ActiveLink>
             </li>
           )}
           {!user && (

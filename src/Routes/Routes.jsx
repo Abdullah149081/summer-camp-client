@@ -35,7 +35,7 @@ const router = createBrowserRouter([
     element: <Dashboard />,
     children: [
       {
-        path: "myClass",
+        path: "studentClasses",
         element: <MySelectedClasses />,
       },
     ],

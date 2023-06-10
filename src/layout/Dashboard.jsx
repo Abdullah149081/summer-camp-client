@@ -12,7 +12,7 @@ const Dashboard = () => {
   const { user } = useAuth();
   // TODO : admin database
   const isAdmin = false;
-  const isInstructor = true;
+  const isInstructor = false;
 
   return (
     <div className="drawer lg:drawer-open ">
@@ -85,25 +85,18 @@ const Dashboard = () => {
           {!isAdmin && !isInstructor && (
             <div>
               <li>
-                <NavLink to="/dashboard/home">
-                  <FaHome className="w-5 h-5" /> <span className="font-cinzel font-semibold">STudent</span>
+                <NavLink to="/dashboard/studentClasses">
+                  <FaHome className="w-5 h-5" /> <span className="font-cinzel font-semibold">My Selected Classes</span> <FaAngleRight />
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/reservations">
-                  <FaCalendarAlt className="w-5 h-5" /> <span className="font-cinzel font-semibold">Reservations</span>
+                <NavLink to="/dashboard/enrolledClass">
+                  <FaCalendarAlt className="w-5 h-5" /> <span className="font-cinzel font-semibold">My Enrolled Classes</span> <FaAngleRight />
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/history">
                   <FaWallet className="w-5 h-5" /> <span className="font-cinzel font-semibold">Payment History</span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/myCart">
-                  <FaShoppingCart className="w-5 h-5" />
-                  <span className="font-cinzel font-bold">My Cart</span>
-                  {/* <span className="badge inl badge-secondary">+{cart?.length || 0}</span> */}
                 </NavLink>
               </li>
             </div>
