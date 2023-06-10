@@ -24,10 +24,10 @@ const Register = () => {
     }
     createUser(data.email, data.password)
       .then(() => {
-        const newUser = { name: data.name, email: data.email };
         axios
           .post("http://localhost:5000/users", {
-            newUser,
+            name: data.name,
+            email: data.email,
           })
           .then((user) => {
             if (user.data.insertedId) {

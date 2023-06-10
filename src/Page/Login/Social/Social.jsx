@@ -1,3 +1,4 @@
+import axios from "axios";
 import { FcGoogle } from "react-icons/fc";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
@@ -10,8 +11,16 @@ const Social = () => {
 
   const handlerGoogle = () => {
     googleSignIn()
-      .then(() => {
-        navigate(from, { replace: true });
+      .then((result) => {
+        const logUser = result.user;
+        axios
+          .post("http://localhost:5000/users", {
+            name: logUser.displayName,
+            email: logUser.email,
+          })
+          .then(() => {
+            navigate(from, { replace: true });
+          });
       })
       .catch(() => {});
   };

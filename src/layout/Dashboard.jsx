@@ -30,7 +30,7 @@ const Dashboard = () => {
         <label htmlFor="my-drawer-2" className="drawer-overlay" />
 
         <ul className="menu  px-6 w-80 mt-4">
-          <div className="mb-4 justify-center flex gap-4  items-center ">
+          <div className="mb-4  flex gap-4  items-center ">
             <li>
               <NavLink to="/">
                 <FaHome className="w-10 h-10  text-lime-600" />
@@ -39,11 +39,13 @@ const Dashboard = () => {
             <p className="py-0  font-bubblegum font-semibold tracking-widest text-lg uppercase">SportsRookieCamp</p>
           </div>
 
-          <div className="mb-10 flex justify-center gap-8  items-center ">
-            <img className="w-10 h-10 rounded-full ring-offset-2 ring-2 ring-secondary" src={user?.photoURL} alt="" />
+          <div className="mb-10 flex  gap-8  items-center ">
+            <div className="pl-2">
+              <img className="w-10 h-10 rounded-full ring-offset-2 ring-2 ring-secondary" src={user?.photoURL} alt="" />
+            </div>
             <div className="space-y-1">
               <p className="font-light tracking-widest capitalize">Welcome</p>
-              <p className=" font-semibold tracking-widest  ">{user?.displayName}</p>
+              <p className="font-semibold tracking-widest  ">{user?.displayName}</p>
             </div>
           </div>
 
