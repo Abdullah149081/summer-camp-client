@@ -1,14 +1,16 @@
+/* eslint-disable import/no-absolute-path */
+/* eslint-disable import/no-unresolved */
 import { FaBars, FaBook, FaCalendarAlt, FaHome, FaShopify, FaShoppingCart, FaUsers, FaWallet } from "react-icons/fa";
 import { ImSpoonKnife } from "react-icons/im";
 import { TfiMenuAlt } from "react-icons/tfi";
 import { NavLink, Outlet } from "react-router-dom";
+import useAuth from "../../../Hooks/useAuth";
 import logo from "/logo.png";
 
 const Dashboard = () => {
-  //   const [cart] = useCart();
+  const { user } = useAuth();
   // TODO : admin database
   const isAdmin = true;
-  // const [isAdmin] = useAdmin();
 
   return (
     <div className="drawer lg:drawer-open ">
@@ -26,9 +28,16 @@ const Dashboard = () => {
         <label htmlFor="my-drawer-2" className="drawer-overlay" />
 
         <ul className="menu  px-6 w-80 mt-4">
-          <div className="mb-10 flex gap-2 justify-center items-center px-6">
-            <img className="w-20 mx-auto" src={logo} alt="" />
-            <p className="py-0  font-bubblegum font-semibold tracking-widest text-2xl uppercase">SportsRookieCamp</p>
+          <div className="mb-4 justify-center flex gap-4  items-center ">
+            <img className="w-16  " src={logo} alt="" />
+            <p className="py-0  font-bubblegum font-semibold tracking-widest text-lg uppercase">SportsRookieCamp</p>
+          </div>
+          <div className="mb-10 flex justify-center gap-8  items-center ">
+            <img className="w-10 h-10 rounded-full ring-offset-2 ring-2 ring-secondary" src={user?.photoURL} alt="" />
+            <div className="space-y-1">
+              <p className="font-light tracking-widest capitalize">Welcome</p>
+              <p className=" font-semibold tracking-widest  ">{user?.displayName}</p>
+            </div>
           </div>
           {isAdmin ? (
             <>
