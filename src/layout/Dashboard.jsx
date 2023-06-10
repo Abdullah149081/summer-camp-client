@@ -16,7 +16,6 @@ const Dashboard = () => {
 
   return (
     <div className="drawer lg:drawer-open ">
-      <PageTitle title="Dashboard" />
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content ">
         <div className="flex justify-center">
@@ -67,7 +66,7 @@ const Dashboard = () => {
           )}
 
           {isInstructor && (
-            <div>
+            <div className="space-y-4">
               <li>
                 <NavLink to="/dashboard/addClass">
                   <FaUserEdit className="w-5 h-5" /> <span className="font-cinzel font-semibold">Add a Class</span> <FaAngleRight />
@@ -83,7 +82,7 @@ const Dashboard = () => {
           )}
 
           {!isAdmin && !isInstructor && (
-            <div>
+            <div className="space-y-4">
               <li>
                 <NavLink to="/dashboard/studentClasses">
                   <FaHome className="w-5 h-5" /> <span className="font-cinzel font-semibold">My Selected Classes</span> <FaAngleRight />
@@ -95,8 +94,8 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/history">
-                  <FaWallet className="w-5 h-5" /> <span className="font-cinzel font-semibold">Payment History</span>
+                <NavLink to="/dashboard/paymentHistory">
+                  <FaWallet className="w-5 h-5" /> <span className="font-cinzel font-semibold">Payment History</span> <FaAngleRight />
                 </NavLink>
               </li>
             </div>

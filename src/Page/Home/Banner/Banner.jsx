@@ -60,12 +60,12 @@ const Banner = () => {
   ];
 
   return (
-    <div className="camp-container  lg:py-10">
+    <div className="lg:min-h-screen">
       <div className="carousel w-full">
         {banners.map((banner) => (
           <div key={banner._id} id={banner.id} className="carousel-item relative w-full">
-            <img src={banner.img_banner} className="rounded-xl w-full lg:h-[600px] 2xl:h-[750px] " alt="banner" />
-            <div className="absolute  text-white  inset-0 rounded-xl  bg-gray-900  bg-opacity-70 ">
+            <img src={banner.img_banner} className=" w-full lg:h-[600px] 2xl:h-[800px] " alt="banner" />
+            <div className="absolute  text-white  inset-0   bg-gray-900  bg-opacity-70 ">
               <div className="lg:left-[15%] 2xl:left-[25%] left-[27%] top-1/4  absolute">
                 <div className="hidden lg:block space-y-4">
                   <h2 className="lg:text-6xl 2xl:text-7xl lg:w-[600px] 2xl:w-[800px] font-bold  tracking-wide leading-[10rem]">{banner.title}</h2>
