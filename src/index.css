@@ -46,14 +46,16 @@
   cursor: pointer;
 }
 .drawer-side a.active {
+  color: black !important;
   padding: 10px 4px;
   display: inline-grid;
   font-size: 16px;
   line-height: 0;
-  background-color: unset !important;
+  background-color: palegoldenrod !important;
 }
 .drawer-side a {
   padding: 10px 4px;
+  text-transform: capitalize;
   display: inline-grid;
   font-size: 16px;
   line-height: 0;

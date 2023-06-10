@@ -1,6 +1,7 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable import/no-absolute-path */
 /* eslint-disable import/no-unresolved */
-import { FaAngleRight, FaBook, FaCalendarAlt, FaHome, FaShoppingCart, FaUsers, FaWallet } from "react-icons/fa";
+import { FaAngleRight, FaBook, FaCalendarAlt, FaHome, FaShoppingCart, FaUsers, FaUsersCog, FaWallet } from "react-icons/fa";
 import { ImSpoonKnife } from "react-icons/im";
 import { TfiMenuAlt } from "react-icons/tfi";
 import { NavLink, Outlet } from "react-router-dom";
@@ -11,6 +12,7 @@ const Dashboard = () => {
   const { user } = useAuth();
   // TODO : admin database
   const isAdmin = true;
+  const isInstructor = false;
 
   return (
     <div className="drawer lg:drawer-open ">
@@ -47,40 +49,28 @@ const Dashboard = () => {
           </div>
 
           <hr className="w-full h-0.5 mx-auto my-4  border-0 rounded " />
-          {isAdmin ? (
+          {isAdmin && (
             <div className="space-y-4">
+              <p className="uppercase font-semibold">Admin Dashboard</p>
               <li>
                 <NavLink className="active:bg-transparent" to="/dashboard/myClass">
-                  <FaHome className="w-5 h-5" /> <span className="font-cinzel font-semibold">My Class</span>
+                  <FaUsersCog className="w-5 h-5" /> <span className="font-cinzel font-semibold">Manage Classes</span>
                   <FaAngleRight />
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/addItem">
-                  <ImSpoonKnife className="w-5 h-5" /> <span className="font-cinzel font-semibold">add items</span> <FaAngleRight />
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/mangeItems">
-                  <TfiMenuAlt className="w-5 h-5" /> <span className="font-cinzel font-semibold">manage items</span> <FaAngleRight />
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/history">
-                  <FaBook className="w-5 h-5" /> <span className="font-cinzel font-semibold">Manage bookings</span> <FaAngleRight />
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/allUsers">
-                  <FaUsers className="w-5 h-5" /> <span className="font-cinzel font-semibold">all users</span> <FaAngleRight />
+                  <FaUsers className="w-5 h-5" /> <span className="font-cinzel font-semibold">Manage Users</span> <FaAngleRight />
                 </NavLink>
               </li>
             </div>
-          ) : (
-            <>
+          )}
+
+          {isInstructor && (
+            <div>
               <li>
                 <NavLink to="/dashboard/home">
-                  <FaHome className="w-5 h-5" /> <span className="font-cinzel font-semibold">User Home</span>
+                  <FaHome className="w-5 h-5" /> <span className="font-cinzel font-semibold">Teacher</span>
                 </NavLink>
               </li>
               <li>
@@ -100,7 +90,34 @@ const Dashboard = () => {
                   {/* <span className="badge inl badge-secondary">+{cart?.length || 0}</span> */}
                 </NavLink>
               </li>
-            </>
+            </div>
+          )}
+
+          {!isAdmin && !isInstructor && (
+            <div>
+              <li>
+                <NavLink to="/dashboard/home">
+                  <FaHome className="w-5 h-5" /> <span className="font-cinzel font-semibold">STudent</span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/reservations">
+                  <FaCalendarAlt className="w-5 h-5" /> <span className="font-cinzel font-semibold">Reservations</span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/history">
+                  <FaWallet className="w-5 h-5" /> <span className="font-cinzel font-semibold">Payment History</span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/myCart">
+                  <FaShoppingCart className="w-5 h-5" />
+                  <span className="font-cinzel font-bold">My Cart</span>
+                  {/* <span className="badge inl badge-secondary">+{cart?.length || 0}</span> */}
+                </NavLink>
+              </li>
+            </div>
           )}
 
           {/* hr  */}
