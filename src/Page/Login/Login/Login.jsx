@@ -28,7 +28,6 @@ const Login = () => {
       .catch((err) => {
         setError(err?.message);
       });
-    console.log(data);
   };
   const handleShowPassword = () => {
     setShowPassword(!showPassword);

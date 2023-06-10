@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
@@ -23,9 +24,18 @@ const Register = () => {
     }
     createUser(data.email, data.password)
       .then(() => {
-        updateUserProfile(data.name, data.photo);
-        logOut();
-        navigate("/login");
+        const newUser = { name: data.name, email: data.email };
+        axios
+          .post("http://localhost:5000/users", {
+            newUser,
+          })
+          .then((user) => {
+            if (user.data.insertedId) {
+              updateUserProfile(data.name, data.photo);
+              logOut();
+              navigate("/login");
+            }
+          });
       })
       .catch((err) => {
         setError(err?.message);
