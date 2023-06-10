@@ -2,6 +2,7 @@ import { FaBars, FaBook, FaCalendarAlt, FaHome, FaShopify, FaShoppingCart, FaUse
 import { ImSpoonKnife } from "react-icons/im";
 import { TfiMenuAlt } from "react-icons/tfi";
 import { NavLink, Outlet } from "react-router-dom";
+import logo from "/logo.png";
 
 const Dashboard = () => {
   //   const [cart] = useCart();
@@ -21,14 +22,14 @@ const Dashboard = () => {
         <Outlet />
       </div>
 
-      <div className="drawer-side bg-[#D1A054]">
+      <div className="drawer-side lg:pr-10 text-white bg-[#2A3F54]">
         <label htmlFor="my-drawer-2" className="drawer-overlay" />
 
-        <ul className="menu p-4 w-80 mt-10">
-          <li className="mb-10">
-            <span className="font-cinzel font-bold tracking-wide text-2xl pb-0">BISTRO BOSS</span>
-            <span className="py-0 font-cinzel font-semibold tracking-widest text-2xl">Restaurant</span>
-          </li>
+        <ul className="menu  px-6 w-80 mt-4">
+          <div className="mb-10 flex gap-2 justify-center items-center px-6">
+            <img className="w-20 mx-auto" src={logo} alt="" />
+            <p className="py-0  font-bubblegum font-semibold tracking-widest text-2xl uppercase">SportsRookieCamp</p>
+          </div>
           {isAdmin ? (
             <>
               <li>
