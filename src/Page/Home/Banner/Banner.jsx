@@ -1,63 +1,15 @@
 /* eslint-disable no-underscore-dangle */
+import { useEffect, useState } from "react";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
 const Banner = () => {
-  const banners = [
-    {
-      _id: "645f1a25cf19b8c585d8612b",
-      id: "slide1",
-      next: "#slide2",
-      previous: "#slide6",
-      img_banner: "https://i.ibb.co/88HkHGw/full-shot-kid-with-ball-field.jpg",
-      title: "Experience the Thrill of Football this Summer",
-      "sub-title": "Join us for Fun and  Learn the Basics of Football",
-    },
-    {
-      _id: "645f1a25cf19b8c585d8612c",
-      id: "slide2",
-      next: "#slide3",
-      previous: "#slide1",
-      img_banner: "https://i.ibb.co/njMsqJw/ezgif-com-webp-to-jpg.jpg",
-      title: "Discover the Excitement of Cricket this Summer",
-      "sub-title": "Join us for Fun and  Learn the Basics of Cricket",
-    },
-    {
-      _id: "645f1a25cf19b8c585d8612d",
-      id: "slide3",
-      next: "#slide4",
-      previous: "#slide2",
-      img_banner: "https://i.ibb.co/SBYsYvf/1550024604-kids-rugby.jpg",
-      title: "Unleash the Power of Rugby this Summer",
-      "sub-title": "Join us for Fun and Learn the Fundamentals of Rugby ",
-    },
-    {
-      _id: "645f1a25cf19b8c585d8612e",
-      id: "slide4",
-      next: "#slide5",
-      previous: "#slide3",
-      img_banner: "https://i.ibb.co/TvPK17R/Tennis-City-Parks-Foundation-Summer-Sports.jpg",
-      title: "Discover the Joy of Tennis this Summer   ",
-      "sub-title": " Join us for Fun and Learn the Fundamentals of Tennis",
-    },
-    {
-      _id: "645f1a25cf19b8c585d8612f",
-      id: "slide5",
-      next: "#slide6",
-      previous: "#slide4",
-      img_banner: "https://i.ibb.co/C6Q8R6z/1200x0.jpg",
-      title: "Unleash the Power of Rugby this Summer",
-      "sub-title": "Join us for Fun and Learn the Fundamentals of Rugby ",
-    },
-    {
-      _id: "645f1a25cf19b8c585d86130",
-      id: "slide6",
-      next: "#slide1",
-      previous: "#slide5",
-      img_banner: "https://i.ibb.co/1sHrCp5/ezgif-com-webp-to-jpg-1.jpg",
-      title: "Soar into Fun with Frisbee this Summer ",
-      "sub-title": "Join us for Exciting Games and Learn  the Art of Frisbee",
-    },
-  ];
+  const [banners, setBanner] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/banner")
+      .then((res) => res.json())
+      .then((data) => setBanner(data));
+  }, []);
 
   return (
     <div className="lg:min-h-screen">
