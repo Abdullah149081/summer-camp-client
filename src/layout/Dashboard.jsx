@@ -6,13 +6,15 @@ import { FaAngleRight, FaDiagnoses, FaHome, FaUserEdit, FaUserPlus, FaUsers, FaU
 import { NavLink, Outlet } from "react-router-dom";
 import selected from "../assets/selected.png";
 
+import useAdmin from "../Hooks/useAdmin";
 import useAuth from "../Hooks/useAuth";
+import useInstructor from "../Hooks/useInstructor";
 
 const Dashboard = () => {
   const { user } = useAuth();
-  // TODO : admin database
-  const isAdmin = false;
-  const isInstructor = false;
+
+  const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstructor();
 
   return (
     <div className="drawer lg:drawer-open ">

@@ -6,8 +6,10 @@ import Register from "../Page/Login/Register/Register";
 import MySelectedClasses from "../Page/Shared/Dashboard/Student/MySelectedClasses";
 import ErrorPage from "../Page/Shared/ErrorPage/ErrorPage";
 
+import ManageUsers from "../Page/Shared/Dashboard/Admin/ManageUsers";
 import Dashboard from "../layout/Dashboard";
 import Main from "../layout/Main";
+import AdminRoute from "./AdminRoute";
 import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
@@ -42,6 +44,15 @@ const router = createBrowserRouter([
       {
         path: "studentClasses",
         element: <MySelectedClasses />,
+      },
+      // Admin
+      {
+        path: "manageUsers",
+        element: (
+          <AdminRoute>
+            <ManageUsers />
+          </AdminRoute>
+        ),
       },
     ],
   },
