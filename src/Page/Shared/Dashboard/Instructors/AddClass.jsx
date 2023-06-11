@@ -1,10 +1,13 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { FaUtensils } from "react-icons/fa";
+
+import Swal from "sweetalert2";
 import useAuth from "../../../../Hooks/useAuth";
+import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import PageTitle from "../../../../components/pageTitle/PageTitle";
 
 const AddClass = () => {
+  const [axiosSecure] = useAxiosSecure();
   const { register, handleSubmit, reset } = useForm();
   const { user } = useAuth();
 
@@ -12,7 +15,18 @@ const AddClass = () => {
     data.price = parseFloat(data.price);
     data.seats = parseFloat(data.seats);
     data.status = "pending";
-    console.log(data);
+
+    axiosSecure.post("/class", data).then((item) => {
+      if (item.data.insertedId) {
+        Swal.fire({
+          title: "success",
+          text: "Class added Please wait ",
+          icon: "success",
+          confirmButtonText: "Cool",
+        });
+        reset();
+      }
+    });
   };
 
   return (
@@ -46,7 +60,7 @@ const AddClass = () => {
                         Class Image <span className="text-pink-500">*</span>
                       </span>
                     </label>
-                    <input {...register("photo", { required: true })} type="url" placeholder="Sport picture" className="input input-bordered w-full " />
+                    <input {...register("photo", { required: true })} type="url" placeholder="Sport picture" className="input input-bordered w-full text-black" />
                   </div>
                   <div className="form-control w-full ">
                     <label className="label">
