@@ -5,7 +5,6 @@ import Login from "../Page/Login/Login/Login";
 import Register from "../Page/Login/Register/Register";
 import MySelectedClasses from "../Page/Shared/Dashboard/Student/MySelectedClasses";
 import ErrorPage from "../Page/Shared/ErrorPage/ErrorPage";
-
 import ManageClass from "../Page/Shared/Dashboard/Admin/ManageClass";
 import ManageUsers from "../Page/Shared/Dashboard/Admin/ManageUsers";
 import AddClass from "../Page/Shared/Dashboard/Instructors/AddClass";
