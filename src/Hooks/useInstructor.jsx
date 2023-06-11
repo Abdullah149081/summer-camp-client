@@ -3,14 +3,13 @@ import useAuth from "./useAuth";
 import useAxiosSecure from "./useAxiosSecure";
 
 const useInstructor = () => {
-  const { user, loading } = useAuth();
+  const { user } = useAuth();
   const [axiosSecure] = useAxiosSecure();
   const { data: isInstructor, isLoading: isInstructorLoading } = useQuery({
     queryKey: ["isInstructor", user?.email],
-    enabled: !loading,
+    enabled: !!user?.email && !!localStorage.getItem("token"),
     queryFn: async () => {
       const res = await axiosSecure.get(`/users/role/${user?.email}`);
-      console.log(res.data.instructors);
       return res.data.instructors;
     },
   });

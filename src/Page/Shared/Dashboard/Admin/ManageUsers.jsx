@@ -90,7 +90,7 @@ const ManageUsers = () => {
                       <td className="font-bold">{idx + 1}</td>
                       <td className="text-gray-800 text-lg ">{user.name}</td>
                       <td className="text-gray-800 text-lg ">{user.email}</td>
-                      <td className="text-gray-800 text-lg  capitalize">{user.role}</td>
+                      <td className="text-gray-800 text-lg  capitalize">{user.role || "user"}</td>
                       <th className="inline-flex gap-4">
                         <button disabled={user.role === "admin"} onClick={() => handleAdmin(user)} type="button" className="btn-camp ">
                           Admin

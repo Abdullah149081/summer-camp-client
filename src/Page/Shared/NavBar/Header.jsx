@@ -1,13 +1,20 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable import/no-absolute-path */
 /* eslint-disable import/no-unresolved */
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
 import { FiLogOut } from "react-icons/fi";
+import useAdmin from "../../../Hooks/useAdmin";
 import useAuth from "../../../Hooks/useAuth";
+import useInstructor from "../../../Hooks/useInstructor";
 import isUser from "../../../assets/user.gif";
 import ActiveLink from "./ActiveLink";
 import logo from "/logo.png";
 
 const Header = () => {
+  const [isAdmin] = useAdmin();
+  console.log(isAdmin);
+  const [isInstructor] = useInstructor();
+  console.log(isInstructor);
   const { user, logOut } = useAuth();
   const handleLogOut = () => {
     logOut();
@@ -55,9 +62,10 @@ const Header = () => {
           </li>
           {user && (
             <li>
-              <ActiveLink to="/dashboard/studentClasses">Dashboard</ActiveLink>
+              <ActiveLink to={isAdmin ? "/dashboard/manageUsers" : isInstructor ? "/dashboard/teacherClass" : "/dashboard/studentClasses"}>Dashboard</ActiveLink>
             </li>
           )}
+
           {!user && (
             <li>
               <ActiveLink to="/login">Sign In</ActiveLink>

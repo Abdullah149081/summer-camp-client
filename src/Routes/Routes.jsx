@@ -6,8 +6,13 @@ import Register from "../Page/Login/Register/Register";
 import MySelectedClasses from "../Page/Shared/Dashboard/Student/MySelectedClasses";
 import ErrorPage from "../Page/Shared/ErrorPage/ErrorPage";
 
+import ManageClass from "../Page/Shared/Dashboard/Admin/ManageClass";
 import ManageUsers from "../Page/Shared/Dashboard/Admin/ManageUsers";
+import AddClass from "../Page/Shared/Dashboard/Instructors/AddClass";
 import InstructorPage from "../Page/Shared/Dashboard/Instructors/InstructorPage";
+import TeachersClass from "../Page/Shared/Dashboard/Instructors/TeachersClass";
+import EnrolledClass from "../Page/Shared/Dashboard/Student/EnrolledClass";
+import PaymentHistory from "../Page/Shared/Dashboard/Student/PaymentHistory";
 import Dashboard from "../layout/Dashboard";
 import Main from "../layout/Main";
 import AdminRoute from "./AdminRoute";
@@ -50,6 +55,14 @@ const router = createBrowserRouter([
         path: "studentClasses",
         element: <MySelectedClasses />,
       },
+      {
+        path: "enrolledClass",
+        element: <EnrolledClass />,
+      },
+      {
+        path: "paymentHistory",
+        element: <PaymentHistory />,
+      },
       // Admin
       {
         path: "manageUsers",
@@ -59,7 +72,23 @@ const router = createBrowserRouter([
           </AdminRoute>
         ),
       },
+      {
+        path: "manageClass",
+        element: (
+          <AdminRoute>
+            <ManageClass />
+          </AdminRoute>
+        ),
+      },
       // instructors
+      {
+        path: "addClass",
+        element: <AddClass />,
+      },
+      {
+        path: "teacherClass",
+        element: <TeachersClass />,
+      },
     ],
   },
 ]);
