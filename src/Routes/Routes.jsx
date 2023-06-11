@@ -16,6 +16,7 @@ import PaymentHistory from "../Page/Shared/Dashboard/Student/PaymentHistory";
 import Dashboard from "../layout/Dashboard";
 import Main from "../layout/Main";
 import AdminRoute from "./AdminRoute";
+import InstructorRoute from "./InstructorRoute";
 import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
@@ -83,11 +84,19 @@ const router = createBrowserRouter([
       // instructors
       {
         path: "addClass",
-        element: <AddClass />,
+        element: (
+          <InstructorRoute>
+            <AddClass />
+          </InstructorRoute>
+        ),
       },
       {
         path: "teacherClass",
-        element: <TeachersClass />,
+        element: (
+          <InstructorRoute>
+            <TeachersClass />
+          </InstructorRoute>
+        ),
       },
     ],
   },
