@@ -28,6 +28,7 @@ const Register = () => {
           .post("http://localhost:5000/users", {
             name: data.name,
             email: data.email,
+            photo: data.photo,
           })
           .then((user) => {
             if (user.data.insertedId) {

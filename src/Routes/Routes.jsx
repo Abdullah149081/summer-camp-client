@@ -7,6 +7,7 @@ import MySelectedClasses from "../Page/Shared/Dashboard/Student/MySelectedClasse
 import ErrorPage from "../Page/Shared/ErrorPage/ErrorPage";
 
 import ManageUsers from "../Page/Shared/Dashboard/Admin/ManageUsers";
+import InstructorPage from "../Page/Shared/Dashboard/Instructors/InstructorPage";
 import Dashboard from "../layout/Dashboard";
 import Main from "../layout/Main";
 import AdminRoute from "./AdminRoute";
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
         path: "/login",
         element: <Login />,
       },
+      {
+        path: "instructors",
+        element: <InstructorPage />,
+      },
     ],
   },
   {
@@ -54,6 +59,7 @@ const router = createBrowserRouter([
           </AdminRoute>
         ),
       },
+      // instructors
     ],
   },
 ]);

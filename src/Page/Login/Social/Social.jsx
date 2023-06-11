@@ -17,6 +17,7 @@ const Social = () => {
           .post("http://localhost:5000/users", {
             name: logUser.displayName,
             email: logUser.email,
+            photo: logUser.photoURL,
           })
           .then(() => {
             navigate(from, { replace: true });
