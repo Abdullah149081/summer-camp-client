@@ -1,13 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
-import Swal from "sweetalert2";
 import useAuth from "../../../../Hooks/useAuth";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 
 const TeachersClass = () => {
   const { user } = useAuth();
   const [axiosSecure] = useAxiosSecure();
-  const { data: classes, refetch } = useQuery(["class"], async () => {
+  const { data: classes } = useQuery(["class"], async () => {
     const res = await axiosSecure.get(`/class/${user?.email}`);
     return res.data;
   });
