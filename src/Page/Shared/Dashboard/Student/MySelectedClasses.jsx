@@ -1,9 +1,33 @@
 import React from "react";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import useClass from "../../../../Hooks/useClass";
 import PageTitle from "../../../../components/pageTitle/PageTitle";
 
 const MySelectedClasses = () => {
-  const [join, refatch] = useClass();
+  const [join, refetch] = useClass();
+  const [axiosSecure] = useAxiosSecure();
+
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure.delete(`/selected/${id}`).then((data) => {
+          if (data.data.deletedCount > 0) {
+            Swal.fire("Deleted!", "Class has been deleted.", "success");
+          }
+          refetch();
+        });
+      }
+    });
+  };
 
   return (
     <div>
@@ -46,7 +70,7 @@ const MySelectedClasses = () => {
                         <th>${item.price}</th>
 
                         <th className=" gap-2">
-                          <button type="button" className="btn-camp">
+                          <button onClick={() => handleDelete(item._id)} type="button" className="btn-camp">
                             Delete
                           </button>
                           <button type="button" className="btn-camp ml-4">
