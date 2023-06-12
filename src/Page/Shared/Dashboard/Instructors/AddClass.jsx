@@ -36,7 +36,7 @@ const AddClass = () => {
         <PageTitle title="Add Item" />
         <div className="camp-container">
           <div>
-            <div className="bg-gray-600 text-white rounded-lg border p-4 lg:p-14  ">
+            <div className="bg-slate-400 text-white rounded-lg border p-4 lg:p-14  ">
               <h1 className="text-4xl text-center font-bold capitalize mb-10">add a class</h1>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="grid gap-6 lg:grid-cols-2">

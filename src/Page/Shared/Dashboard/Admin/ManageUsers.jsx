@@ -65,7 +65,7 @@ const ManageUsers = () => {
       <PageTitle title="ManageUsers" />
       <div className="camp-container">
         <div>
-          <div className="bg-[#FFFFFF] rounded-md border p-4 lg:p-[50px]  ">
+          <div className="bg-slate-400 rounded-md border p-4 lg:p-20  ">
             <div className="stats shadow bg-pink-600 text-white">
               <div className="stat">
                 <div className="stat-title text-gray-900 font-semibold">Total Users</div>
@@ -74,7 +74,7 @@ const ManageUsers = () => {
             </div>
 
             <div className="overflow-x-auto ">
-              <table className="table w-full mt-10 text-center  table-pin-rows">
+              <table className="table w-full mt-10 text-center ">
                 <thead>
                   <tr>
                     <th className="bg-gray-700 rounded-tl-md text-white tracking-wide">#</th>

@@ -51,9 +51,9 @@ const ManageClass = () => {
       <PageTitle title="ManageClass" />
       <div className="camp-container">
         <div>
-          <div className="bg-[#FFFFFF] border p-4 lg:p-10 rounded-lg  ">
+          <div className=" bg-slate-400 border p-4 lg:p-10 rounded-lg  ">
             <div className="overflow-x-auto ">
-              <table className="table w-full mt-10 text-center  table-pin-rows">
+              <table className="table w-full mt-10 text-center ">
                 <thead>
                   <tr>
                     <th className="bg-gray-700 uppercase rounded-tl-md text-white tracking-wide">#</th>
