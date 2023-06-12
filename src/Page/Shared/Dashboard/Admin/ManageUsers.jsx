@@ -20,7 +20,7 @@ const ManageUsers = () => {
       confirmButtonText: "Yes, Admin it",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.patch(`http://localhost:5000/users/admin/${user._id}`).then((data) => {
+        axios.patch(`https://summer-camp-sport-school-server.vercel.app/users/admin/${user._id}`).then((data) => {
           if (data.data.modifiedCount) {
             refetch();
             Swal.fire({
@@ -45,7 +45,7 @@ const ManageUsers = () => {
       confirmButtonText: "Yes, Instructor it",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.patch(`http://localhost:5000/users/instructors/${user._id}`).then((data) => {
+        axios.patch(`https://summer-camp-sport-school-server.vercel.app/users/instructors/${user._id}`).then((data) => {
           if (data.data.modifiedCount) {
             refetch();
             Swal.fire({

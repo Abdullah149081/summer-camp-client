@@ -10,7 +10,7 @@ const InstructorPage = () => {
   const [instructors, setInstructors] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/users/instructors").then((data) => {
+    axios.get("https://summer-camp-sport-school-server.vercel.app/users/instructors").then((data) => {
       setInstructors(data.data);
     });
   });

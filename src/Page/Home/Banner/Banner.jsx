@@ -6,7 +6,7 @@ const Banner = () => {
   const [banners, setBanner] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/banner")
+    fetch("https://summer-camp-sport-school-server.vercel.app/banner")
       .then((res) => res.json())
       .then((data) => setBanner(data));
   }, []);

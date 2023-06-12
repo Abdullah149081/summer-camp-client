@@ -15,7 +15,7 @@ const ClassCard = ({ item }) => {
   const handleSelectedClass = () => {
     if (user && user.email) {
       axios
-        .post("http://localhost:5000/selected", {
+        .post("https://summer-camp-sport-school-server.vercel.app/selected", {
           classId: _id,
           name,
           photo,

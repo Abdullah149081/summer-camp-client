@@ -25,7 +25,7 @@ const Register = () => {
     createUser(data.email, data.password)
       .then(() => {
         axios
-          .post("http://localhost:5000/users", {
+          .post("https://summer-camp-sport-school-server.vercel.app/users", {
             name: data.name,
             email: data.email,
             photo: data.photo,

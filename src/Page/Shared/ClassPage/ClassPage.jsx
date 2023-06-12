@@ -8,7 +8,7 @@ const ClassPage = () => {
   const [classes, setClasses] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/allClass").then((data) => {
+    axios.get("https://summer-camp-sport-school-server.vercel.app/allClass").then((data) => {
       setClasses(data.data);
     });
   });

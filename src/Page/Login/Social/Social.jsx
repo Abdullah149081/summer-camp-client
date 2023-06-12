@@ -14,7 +14,7 @@ const Social = () => {
       .then((result) => {
         const logUser = result.user;
         axios
-          .post("http://localhost:5000/users", {
+          .post("https://summer-camp-sport-school-server.vercel.app/users", {
             name: logUser.displayName,
             email: logUser.email,
             photo: logUser.photoURL,
