@@ -10,7 +10,7 @@ const useClass = () => {
     queryKey: ["classes", user?.email],
     enabled: !loading && !!user?.email && !!localStorage.getItem("token"),
     queryFn: async () => {
-      const res = await axiosSecure(`/carts?email=${user?.email}`);
+      const res = await axiosSecure(`/selected?email=${user?.email}`);
       return res.data;
     },
   });
