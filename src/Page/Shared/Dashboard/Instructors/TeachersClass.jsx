@@ -50,7 +50,7 @@ const TeachersClass = () => {
                       <th>{item.seats}</th>
                       <th>${item.price}</th>
                       <th>
-                        <span className={`${item.status === "pending" && "bg-pink-500"} p-3 badge badge-ghost badge-sm  capitalize`}>{item.status}</span>
+                        <span className={`${item.status === "pending" && "bg-pink-500"} ${item.status === "deny" && "bg-red-600"} p-3 badge badge-ghost badge-sm  capitalize`}>{item.status}</span>
                       </th>
                       <th>{item.feedback || ""}</th>
                       <th className="flex gap-2">

@@ -12,9 +12,8 @@ import logo from "/logo.png";
 
 const Header = () => {
   const [isAdmin] = useAdmin();
-  console.log(isAdmin);
   const [isInstructor] = useInstructor();
-  console.log(isInstructor);
+
   const { user, logOut } = useAuth();
   const handleLogOut = () => {
     logOut();
