@@ -18,6 +18,7 @@ import Main from "../layout/Main";
 import AdminRoute from "./AdminRoute";
 import InstructorRoute from "./InstructorRoute";
 import PrivateRoutes from "./PrivateRoutes";
+import StudentRoute from "./StudentRoute";
 
 const router = createBrowserRouter([
   {
@@ -58,15 +59,27 @@ const router = createBrowserRouter([
     children: [
       {
         path: "studentClasses",
-        element: <MySelectedClasses />,
+        element: (
+          <StudentRoute>
+            <MySelectedClasses />
+          </StudentRoute>
+        ),
       },
       {
         path: "enrolledClass",
-        element: <EnrolledClass />,
+        element: (
+          <StudentRoute>
+            <EnrolledClass />
+          </StudentRoute>
+        ),
       },
       {
         path: "paymentHistory",
-        element: <PaymentHistory />,
+        element: (
+          <StudentRoute>
+            <PaymentHistory />
+          </StudentRoute>
+        ),
       },
       // Admin
       {
