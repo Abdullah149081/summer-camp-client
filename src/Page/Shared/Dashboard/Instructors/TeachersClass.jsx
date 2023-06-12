@@ -12,23 +12,6 @@ const TeachersClass = () => {
     return res.data;
   });
 
-  const handleApprove = (item) => {
-    axiosSecure
-      .patch(`/class/approve/${item._id}`, {
-        status: "approve",
-      })
-      .then((data) => {
-        if (data.data.modifiedCount) {
-          refetch();
-          Swal.fire({
-            title: "success",
-            text: "Status updated to 'Approved' successfully",
-            icon: "success",
-            confirmButtonText: "Cool",
-          });
-        }
-      });
-  };
   return (
     <div className="w-full">
       <div className="camp-container">
