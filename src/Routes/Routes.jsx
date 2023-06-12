@@ -4,6 +4,7 @@ import Home from "../Page/Home/Home/Home";
 import Login from "../Page/Login/Login/Login";
 import Register from "../Page/Login/Register/Register";
 import ClassPage from "../Page/Shared/ClassPage/ClassPage";
+import Feedback from "../Page/Shared/Dashboard/Admin/Feedback";
 import ManageClass from "../Page/Shared/Dashboard/Admin/ManageClass";
 import ManageUsers from "../Page/Shared/Dashboard/Admin/ManageUsers";
 import AddClass from "../Page/Shared/Dashboard/Instructors/AddClass";
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
         path: "classes",
         element: <ClassPage />,
       },
+      // {
+      //   path: "/feedback/:id",
+      //   element: <Feedback />,
+      // },
     ],
   },
   {
@@ -98,6 +103,15 @@ const router = createBrowserRouter([
           </AdminRoute>
         ),
       },
+      {
+        path: "manageClass/feedback/:id",
+        element: (
+          <AdminRoute>
+            <Feedback />
+          </AdminRoute>
+        ),
+      },
+
       // instructors
       {
         path: "addClass",

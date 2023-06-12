@@ -1,6 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
+import PageTitle from "../../../../components/pageTitle/PageTitle";
 
 const ManageClass = () => {
   const [axiosSecure] = useAxiosSecure();
@@ -46,6 +48,7 @@ const ManageClass = () => {
 
   return (
     <div className="w-full">
+      <PageTitle title="ManageClass" />
       <div className="camp-container">
         <div>
           <div className="bg-[#FFFFFF] border p-4 lg:p-10 rounded-lg  ">
@@ -90,9 +93,11 @@ const ManageClass = () => {
                         <button disabled={item.status === "deny"} onClick={() => handleDeny(item)} type="button" className="btn-camp">
                           Deny
                         </button>
-                        <button type="button" className="btn-camp">
-                          feedback
-                        </button>
+                        <Link to={`feedback/${item._id}`}>
+                          <button type="button" className="btn-camp">
+                            feedback
+                          </button>
+                        </Link>
                       </th>
                     </tr>
                   ))}

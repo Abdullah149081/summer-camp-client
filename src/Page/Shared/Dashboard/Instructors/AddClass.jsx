@@ -15,6 +15,7 @@ const AddClass = () => {
     data.price = parseFloat(data.price);
     data.seats = parseFloat(data.seats);
     data.status = "pending";
+    data.picture = user.photoURL;
 
     axiosSecure.post("/class", data).then((item) => {
       if (item.data.insertedId) {
