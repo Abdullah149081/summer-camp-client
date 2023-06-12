@@ -24,7 +24,7 @@ const InstructorPage = () => {
           <div key={instructor._id} className="card w-full  ">
             <div className="relative">
               <figure>
-                <img className="h-96 object-cover rounded-3xl w-full" src={instructor.photo} alt="" />
+                <img className="h-96 border object-cover rounded-3xl w-full" src={instructor.photo} alt="" />
               </figure>
             </div>
             <div className="card-body h-36 inset-x-0 bottom-0 rounded-b-3xl absolute bg-[#848c2f] ">
