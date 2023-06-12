@@ -1,5 +1,6 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+
 import { MdOutlineMarkEmailRead } from "react-icons/md";
 
 const PopularInstructor = () => {
@@ -12,8 +13,8 @@ const PopularInstructor = () => {
   });
   return (
     <div>
-      <h2 className="text-center uppercase font-extrabold text-2xl lg:text-5xl mt-10 text-[#422c18]">Popular Instructors</h2>
-      <div className="grid gap-4 lg:grid-cols-3 camp-container">
+      <h2 className="text-center anim uppercase font-extrabold text-2xl lg:text-5xl mt-10 text-[#422c18]">Popular Instructors</h2>
+      <div className="grid i gap-4 lg:grid-cols-3 camp-container">
         {instructors.slice(0, 6).map((instructor) => (
           <div key={instructor._id} className="card w-full  ">
             <div className="relative">
