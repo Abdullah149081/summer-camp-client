@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { MdOutlineMarkEmailRead } from "react-icons/md";
+
 import PageTitle from "../../../components/pageTitle/PageTitle";
 
 const ClassPage = () => {
@@ -23,7 +23,7 @@ const ClassPage = () => {
                 <img className="h-96  border object-cover rounded-3xl w-full" src={item.photo} alt="" />
               </figure>
             </div>
-            {/* disabled={item.seats === 12} */}
+
             <div
               className={`${
                 item.seats === 0 ? "bg-red-700" : "bg-[#F7941E] "

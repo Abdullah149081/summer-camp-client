@@ -21,7 +21,24 @@ const ManageClass = () => {
             title: "success",
             text: "Status updated to 'Approved' successfully",
             icon: "success",
-            confirmButtonText: "Cool",
+            confirmButtonText: "ok",
+          });
+        }
+      });
+  };
+  const handleDeny = (item) => {
+    axiosSecure
+      .patch(`/class/approve/${item._id}`, {
+        status: "deny",
+      })
+      .then((data) => {
+        if (data.data.modifiedCount) {
+          refetch();
+          Swal.fire({
+            title: "success",
+            text: "Status updated to 'Denied' successfully",
+            icon: "success",
+            confirmButtonText: "ok",
           });
         }
       });
@@ -70,7 +87,7 @@ const ManageClass = () => {
                         <button disabled={item.status === "approve"} onClick={() => handleApprove(item)} type="button" className="btn-camp">
                           Approve
                         </button>
-                        <button type="button" className="btn-camp">
+                        <button disabled={item.status === "deny"} onClick={() => handleDeny(item)} type="button" className="btn-camp">
                           Deny
                         </button>
                         <button type="button" className="btn-camp">
