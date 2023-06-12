@@ -2,9 +2,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 import PageTitle from "../../../components/pageTitle/PageTitle";
+import useAdmin from "../../../Hooks/useAdmin";
+import useInstructor from "../../../Hooks/useInstructor";
 
 const ClassPage = () => {
   const [classes, setClasses] = useState([]);
+  const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstructor();
 
   useEffect(() => {
     axios.get("http://localhost:5000/allClass").then((data) => {
@@ -35,7 +39,7 @@ const ClassPage = () => {
 
               <h2 className=" text-white text-2xl font-bold text-center capitalize">${item.price}</h2>
               <div className="flex overflow-hidden hover:overflow-visible justify-center">
-                <button disabled={item.seats === 0} type="button" className="btn-camp ">
+                <button disabled={item.seats === 0 || isAdmin || isInstructor} type="button" className="btn-camp ">
                   Select
                 </button>
               </div>
