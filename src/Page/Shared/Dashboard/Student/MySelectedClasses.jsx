@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import useClass from "../../../../Hooks/useClass";
@@ -73,9 +74,11 @@ const MySelectedClasses = () => {
                           <button onClick={() => handleDelete(item._id)} type="button" className="btn-camp">
                             Delete
                           </button>
-                          <button type="button" className="btn-camp ml-4">
-                            pay
-                          </button>
+                          <Link to="/dashboard/payment">
+                            <button type="button" className="btn-camp ml-4">
+                              pay
+                            </button>
+                          </Link>
                         </th>
                       </tr>
                     ))}

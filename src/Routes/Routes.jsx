@@ -12,6 +12,7 @@ import InstructorPage from "../Page/Shared/Dashboard/Instructors/InstructorPage"
 import TeachersClass from "../Page/Shared/Dashboard/Instructors/TeachersClass";
 import EnrolledClass from "../Page/Shared/Dashboard/Student/EnrolledClass";
 import MySelectedClasses from "../Page/Shared/Dashboard/Student/MySelectedClasses";
+import Payment from "../Page/Shared/Dashboard/Student/Payment/Payment";
 import PaymentHistory from "../Page/Shared/Dashboard/Student/PaymentHistory";
 import ErrorPage from "../Page/Shared/ErrorPage/ErrorPage";
 import Dashboard from "../layout/Dashboard";
@@ -83,6 +84,14 @@ const router = createBrowserRouter([
         element: (
           <StudentRoute>
             <PaymentHistory />
+          </StudentRoute>
+        ),
+      },
+      {
+        path: "payment",
+        element: (
+          <StudentRoute>
+            <Payment />
           </StudentRoute>
         ),
       },
