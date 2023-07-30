@@ -6,6 +6,11 @@
 
 :root {
   font-family: "Nunito", sans-serif;
+  background-image: linear-gradient(to right top, #fff0e5, #fff2f0, #fff6f9, #fefbfe, #ffffff);
+}
+
+.bg-nav {
+  background-image: linear-gradient(to right top, #fff0e5, #fff2f0, #fff6f9, #fefbfe, #ffffff);
 }
 
 .font-bubblegum {
@@ -60,4 +65,13 @@
   font-size: 16px;
   line-height: 0;
   background-color: unset !important;
+}
+
+.mask {
+  -webkit-mask-image: url("/src/assets/download.svg");
+  mask-image: url("/src/assets/download.svg");
+  -webkit-mask-size: 85%;
+  mask-size: 85%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }

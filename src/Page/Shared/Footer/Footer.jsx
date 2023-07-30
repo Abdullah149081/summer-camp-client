@@ -5,8 +5,8 @@ import logo from "/logo.png";
 
 const Footer = () => {
   return (
-    <div className="bg-[#0a6375] ">
-      <div className="camp-container ">
+    <div className="bg-[url('footer.png')] bg-no-repeat bg-cover lg:h-[700px]">
+      <div className="pt-[200px] pb-[50px] lg:pt-[350px] ">
         <div className="px-10 lg:px-0 flex flex-col lg:flex-row justify-around gap-6  ">
           <div className="">
             <img className="w-20" src={logo} alt="" />

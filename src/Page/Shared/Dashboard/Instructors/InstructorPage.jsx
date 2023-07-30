@@ -17,21 +17,21 @@ const InstructorPage = () => {
 
   return (
     <div>
-      <h2 className="text-center uppercase font-extrabold text-5xl mt-10 text-[#422c18]">Meet Our Expert Instructors</h2>
-      <div className="grid gap-4 lg:grid-cols-3 camp-container">
-        <PageTitle title="Instructor" />
+      <h2 className="text-center uppercase font-extrabold text-2xl lg:text-4xl mt-10 text-[#0a6375]">Meet Our Expert Instructors</h2>
+      <PageTitle title="Instructor" />
+      <div className="grid i gap-4 lg:grid-cols-3 camp-container">
         {instructors.map((instructor) => (
-          <div key={instructor._id} className="card w-full  ">
-            <div className="relative">
-              <figure>
-                <img className="h-96 border object-cover rounded-3xl w-full" src={instructor.photo} alt="" />
+          <div key={instructor._id} className="card w-full group ">
+            <div className="">
+              <figure className="mask">
+                <img className="h-96 object-cover w-full group-hover:scale-90 transition duration-300" src={instructor.photo} alt="" />
               </figure>
             </div>
-            <div className="card-body h-36 inset-x-0 bottom-0 rounded-b-3xl absolute bg-[#848c2f] ">
-              <h2 className=" text-white text-3xl font-bold text-center capitalize">{instructor.name}</h2>
+            <div className="card-body -mt-8 ">
+              <h2 className="group-hover:text-[#eb1551] transition duration-300 text-[#1cbbb4] text-3xl font-bold text-center capitalize ">{instructor.name}</h2>
               <div className="flex gap-4 mx-auto text-lg  ">
                 <MdOutlineMarkEmailRead className="w-6 h-6" />
-                <p>{instructor.email}</p>
+                <p className="group-hover:text-[#1cbbb4] font-semibold transition duration-300">{instructor.email}</p>
               </div>
             </div>
           </div>

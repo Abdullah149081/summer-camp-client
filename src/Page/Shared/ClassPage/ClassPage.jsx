@@ -14,7 +14,7 @@ const ClassPage = () => {
   });
   return (
     <div>
-      <h2 className="text-center uppercase font-extrabold text-4xl mt-10 text-[#422c18]">On the Field Embracing the Thrill of Sports</h2>
+      <h2 className="text-center uppercase font-extrabold  mt-10 text-2xl lg:text-4xl mt-10 text-[#0a6375]">On the Field Embracing the Thrill of Sports</h2>
       <div className="grid gap-4 lg:grid-cols-3 camp-container">
         <PageTitle title="ClassPage" />
         {classes.map((item) => (

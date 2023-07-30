@@ -6,7 +6,7 @@ import teacher from "../../../assets/teacher.png";
 const Choose = () => {
   return (
     <div className="camp-container">
-      <h1 className="text-center mb-24 font-extrabold text-2xl lg:text-5xl mt-10 text-[#422c18]">Why Choose SportsRookieCamp?</h1>
+      <h1 className="text-center mb-24 font-extrabold text-2xl lg:text-4xl mt-10 text-[#0a6375]">Why Choose SportsRookieCamp?</h1>
       <div className="grid  lg:grid-cols-3">
         <div className="card  ">
           <figure>

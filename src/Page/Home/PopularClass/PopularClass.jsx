@@ -13,7 +13,7 @@ const PopularClass = () => {
   console.log(setClasses);
   return (
     <div>
-      <h2 className="text-center uppercase font-extrabold text-4xl mt-10 text-[#422c18]">Popular Class</h2>
+      <h2 className="text-center uppercase font-extrabold text-2xl lg:text-4xl mt-10 text-[#0a6375]">Popular Class</h2>
       <div className="grid gap-4 lg:grid-cols-3 camp-container">
         {classes.map((item) => (
           <ClassCard key={item._id} item={item} />

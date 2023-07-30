@@ -1,4 +1,5 @@
 /* eslint-disable no-underscore-dangle */
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
@@ -11,17 +12,22 @@ const Banner = () => {
       .then((data) => setBanner(data));
   }, []);
 
+  const variants = {
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 },
+  };
+
   return (
     <div className="lg:min-h-screen">
       <div className="carousel w-full">
         {banners.map((banner) => (
           <div key={banner._id} id={banner.id} className="carousel-item relative w-full">
             <img src={banner.img_banner} className=" w-full lg:h-[600px] 2xl:h-[800px] " alt="banner" />
-            <div className="absolute  text-white  inset-0   bg-gray-900  bg-opacity-70 ">
+            <div className="absolute  text-white  inset-0   bg-gray-900  bg-opacity-70  ">
               <div className="lg:left-[15%] 2xl:left-[25%] left-[27%] top-1/4  absolute">
                 <div className="hidden lg:block space-y-4">
-                  <h2 className="lg:text-6xl 2xl:text-7xl lg:w-[600px] 2xl:w-[800px] font-bold  tracking-wide leading-[10rem]">{banner.title}</h2>
-                  <p className="text-3xl">{banner["sub-title"]}</p>
+                  <motion.h2 className="lg:text-6xl 2xl:text-7xl lg:w-[600px] 2xl:w-[800px] font-bold  tracking-wide leading-[10rem]">{banner.title}</motion.h2>
+                  <p className="text-3xl ">{banner["sub-title"]}</p>
                 </div>
                 <div className="lg:hidden space-y-4">
                   <h2 className=" font-bold text-lg">20% Flat Off On Enroll</h2>
