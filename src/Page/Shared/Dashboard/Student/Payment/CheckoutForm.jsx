@@ -1,6 +1,7 @@
 /* eslint-disable operator-linebreak */
 /* eslint-disable no-useless-return */
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import moment from "moment";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -77,7 +78,7 @@ const CheckoutForm = ({ singleClass }) => {
         price,
         instructorEmail,
         transactionId: paymentIntent.id,
-        date: new Date(),
+        date: moment().format("MMMM Do YYYY, h:mm:ss a"),
       };
 
       const enrolledClass = {
@@ -98,7 +99,7 @@ const CheckoutForm = ({ singleClass }) => {
           res.data.updateInstructor.modifiedCount > 0
         ) {
           Swal.fire("Successful!", "Payment has been submitted.", "success");
-          navigate("/dashboard/payments-history", { replace: true });
+          navigate("/dashboard/paymentHistory", { replace: true });
         }
       });
     }
@@ -122,9 +123,11 @@ const CheckoutForm = ({ singleClass }) => {
         }}
       />
 
-      <button className="btn btn-primary btn-sm mt-4" type="submit" disabled={!stripe}>
+      <button className="btn btn-primary btn-sm mt-4" type="submit" disabled={!stripe || !paymentSecret || processing}>
         Pay
       </button>
+      {cardError && <p className="text-error">{cardError}</p>}
+      {cardSuccess && <p className="text-success">Transaction complete with transactionId: {cardSuccess}</p>}
     </form>
   );
 };
