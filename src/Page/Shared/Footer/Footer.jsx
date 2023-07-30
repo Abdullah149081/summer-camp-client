@@ -6,7 +6,7 @@ import logo from "/logo.png";
 const Footer = () => {
   return (
     <div className="bg-[url('footer.png')] bg-no-repeat bg-cover lg:h-[700px]">
-      <div className="pt-[200px] pb-[50px] lg:pt-[350px] ">
+      <div className=" pb-[50px]  pt-[300px] lg:pt-[350px]  mx-auto sm:max-w-xl lg:max-w-screen-lg  2xl:max-w-screen-2xl   ">
         <div className="px-10 lg:px-0 flex flex-col lg:flex-row justify-around gap-6  ">
           <div className="">
             <img className="w-20" src={logo} alt="" />
@@ -32,6 +32,14 @@ const Footer = () => {
               <li>About us</li>
               <li>Our Team</li>
               <li>News Feed</li>
+            </ul>
+          </div>
+          <div className="text-gray-50 ">
+            <h2 className="text-2xl mb-4  font-bubblegum">Our facilities</h2>
+            <ul className="space-y-3 camp-footer font-semibold ">
+              <li>Plans & Pricing </li>
+              <li>Sport</li>
+              <li>Research equipment</li>
             </ul>
           </div>
           <div className="text-white ">

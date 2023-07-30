@@ -67,7 +67,7 @@
   background-color: unset !important;
 }
 
-.mask {
+.mask-pic {
   -webkit-mask-image: url("/src/assets/download.svg");
   mask-image: url("/src/assets/download.svg");
   -webkit-mask-size: 85%;

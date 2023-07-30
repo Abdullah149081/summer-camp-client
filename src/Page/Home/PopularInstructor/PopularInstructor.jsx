@@ -18,7 +18,7 @@ const PopularInstructor = () => {
         {instructors.map((instructor) => (
           <div key={instructor._id} className="card w-full group ">
             <div className="">
-              <figure className="mask">
+              <figure className="mask-pic">
                 <img className="h-96 object-cover w-full group-hover:scale-90 transition duration-300" src={instructor.photo} alt="" />
               </figure>
             </div>
