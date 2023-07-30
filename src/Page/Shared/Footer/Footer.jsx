@@ -5,7 +5,7 @@ import logo from "/logo.png";
 
 const Footer = () => {
   return (
-    <div className="bg-[url('footer.png')] bg-no-repeat bg-cover lg:h-[700px]">
+    <div className="bg-[url('assets/footer.png')] bg-no-repeat bg-cover lg:h-[700px]">
       <div className=" pb-[50px]  pt-[300px] lg:pt-[350px]  mx-auto sm:max-w-xl lg:max-w-screen-lg  2xl:max-w-screen-2xl   ">
         <div className="px-10 lg:px-0 flex flex-col lg:flex-row justify-around gap-6  ">
           <div className="">
