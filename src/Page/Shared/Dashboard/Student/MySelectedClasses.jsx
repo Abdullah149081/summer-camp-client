@@ -74,7 +74,7 @@ const MySelectedClasses = () => {
                           <button onClick={() => handleDelete(item._id)} type="button" className="btn-camp">
                             Delete
                           </button>
-                          <Link to="/dashboard/payment">
+                          <Link to={`/dashboard/payment/${item?._id}`}>
                             <button type="button" className="btn-camp ml-4">
                               pay
                             </button>

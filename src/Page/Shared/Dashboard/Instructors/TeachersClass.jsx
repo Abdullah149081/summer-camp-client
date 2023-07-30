@@ -45,7 +45,7 @@ const TeachersClass = () => {
                         </div>
                       </td>
                       <td className=" font-semibold">{item.ClassName}</td>
-                      <td className=" font-semibold">{item.enrolled || 0}</td>
+                      <td className=" font-semibold">{item.totalEnrolled }</td>
 
                       <th>{item.seats}</th>
                       <th>${item.price}</th>

@@ -6,7 +6,7 @@ import useAuth from "../../Hooks/useAuth";
 import useInstructor from "../../Hooks/useInstructor";
 
 const ClassCard = ({ item }) => {
-  const { seats, ClassName, name, price, _id, photo } = item || {};
+  const { seats, ClassName, name, price, _id, photo, email } = item || {};
   const { user } = useAuth();
   const [isAdmin] = useAdmin();
   const [isInstructor] = useInstructor();
@@ -20,6 +20,7 @@ const ClassCard = ({ item }) => {
           name,
           photo,
           price,
+          instructorEmail: email,
           ClassName,
           email: user.email,
         })
